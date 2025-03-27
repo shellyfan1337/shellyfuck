@@ -15,6 +15,13 @@ public class ShellyFuckBridge
         }
         
         string filePath = args[0];
+
+        if (!filePath.EndsWith(".shelly"))
+        {
+            Console.WriteLine("Invalid file path");
+            return;
+        }
+        
         if (!File.Exists(filePath))
         {
             Console.WriteLine("File not found: {0}", filePath);
